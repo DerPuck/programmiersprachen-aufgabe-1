@@ -54,6 +54,27 @@ TEST_CASE ("describe_fract", "[fract]")
 {
 REQUIRE (fract (0) == 18);
 }*/
+//Aufgabe1_12
+double surface (double r, double h)
+{
+  return (2 * M_PI * r * (r + h));
+}
+TEST_CASE ("describe_surface", "[surface]") 
+{
+REQUIRE (surface (10,2) == Approx(753.982));
+REQUIRE (surface (0,5) == Approx(0));
+REQUIRE (surface (1110,5642) == Approx(47090714.585));
+}
+double volume (double r, double h)
+{
+  return (M_PI * r * r *h);
+}
+TEST_CASE ("describe_volume", "[volume]") 
+{
+REQUIRE (volume (10,2) == Approx(628.319));
+REQUIRE (volume (0,5) == Approx(0));
+REQUIRE (volume (1110,5642) == Approx(21838807092.489));
+}
 int main(int argc, char* argv[]){
   return Catch::Session().run(argc, argv);
 }
