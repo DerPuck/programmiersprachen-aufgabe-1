@@ -6,8 +6,8 @@
 int gcd (int a , int b)
 {
   if(b == 0)
-  return a;
-  else return gcd(b, a % b); 
+    return a;
+  return gcd(b, a % b); 
 }
 TEST_CASE ("describe_gcd", "[gcd]")
 {
@@ -79,7 +79,7 @@ REQUIRE (volume (1110,5642) == Approx(21838807092.489));
 int factorial (int a)
 {
   if(a<=1)
-  return 1;
+    return 1;
   return a * factorial(a-1);
 }
 TEST_CASE ("describe_sum_factorial", "[factorial]") 
@@ -91,12 +91,24 @@ REQUIRE (factorial (0) == 1);
 //Aufgabe1_14
 int is_prime (int a)
 {
-  
+  for(int i = 2;i < a;i++)
+  {
+    if(a % i ==0)
+      return i;
+  }
+  for(int i = 2;i < a;i++)
+  {
+    if(a % i !=0)
+      return 1;
+  }
+
 }
 TEST_CASE ("describe_sum_is_prime", "[is_prime]") 
 {
-REQUIRE (is_prime (10) == 3628800);
-REQUIRE (is_prime (3) == 6);
+REQUIRE (is_prime (9) == 3);
+REQUIRE (is_prime (7) == 1);
+REQUIRE (is_prime (11) == 1);
+REQUIRE (is_prime (21) == 3);
 }
 int main(int argc, char* argv[]){
   return Catch::Session().run(argc, argv);
