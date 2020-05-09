@@ -5,12 +5,9 @@
 //Aufgabe1_8
 int gcd (int a , int b)
 {
-  if(b==0)
-  return 0;
-  if(a==0)
-  return b;
-  else
-    return gcd(b, a%b); 
+  if(b == 0)
+  return a;
+  else return gcd(b, a % b); 
 }
 TEST_CASE ("describe_gcd", "[gcd]")
 {
@@ -35,23 +32,20 @@ REQUIRE (checksum (0) == 0);
 int sum_multiples (int a)
 {
   int i;
-  for(i=0; i<1000; i++)
+  int var;
+  for(i=1; i<=a; i++)
   {
-    if(i/3 % 1 == 1)   
-    return i + a;
+    if(i % 3 == 0|| i % 5 == 0)   
+    var = i + var;
   } 
-  int k;
-  for(k=0; k<1000; k++)
-  {
-    if(k/5 % 1 == 1)   
-    return k + a;
-  } 
+  return var;
 }
 TEST_CASE ("describe_sum_mutiples", "[sum_multiples]") 
 {
-REQUIRE (sum_multiples (0) == 18);
+REQUIRE (sum_multiples (10) == 33);
+REQUIRE (sum_multiples (1000) == 234168);
 }
-//Aufgabe1_11
+/*//Aufgabe1_11
 float fract (float a)
 {
   return 0;
@@ -59,7 +53,7 @@ float fract (float a)
 TEST_CASE ("describe_fract", "[fract]") 
 {
 REQUIRE (fract (0) == 18);
-}
+}*/
 int main(int argc, char* argv[]){
   return Catch::Session().run(argc, argv);
 }
