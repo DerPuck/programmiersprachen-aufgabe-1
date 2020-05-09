@@ -31,13 +31,13 @@ REQUIRE (checksum (0) == 0);
 //Aufgabe1_10
 int sum_multiples (int a)
 {
-  int i;
-  int var;
+  int i = 0;
+  int var = 0;
   for(i=1; i<=a; i++)
   {
     if(i % 3 == 0|| i % 5 == 0)   
     var = i + var;
-  } 
+  }
   return var;
 }
 TEST_CASE ("describe_sum_mutiples", "[sum_multiples]") 
