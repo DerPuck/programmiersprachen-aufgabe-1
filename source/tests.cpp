@@ -48,11 +48,11 @@ REQUIRE (sum_multiples (1000) == 234168);
 /*//Aufgabe1_11
 float fract (float a)
 {
-  return 0;
+  return a;
 }
 TEST_CASE ("describe_fract", "[fract]") 
 {
-REQUIRE (fract (0) == 18);
+REQUIRE (fract (1.123456789123456789123456789) == Approx(1.123456789123456789123456789));
 }*/
 //Aufgabe1_12
 double surface (double r, double h)
@@ -74,6 +74,21 @@ TEST_CASE ("describe_volume", "[volume]")
 REQUIRE (volume (10,2) == Approx(628.319));
 REQUIRE (volume (0,5) == Approx(0));
 REQUIRE (volume (1110,5642) == Approx(21838807092.489));
+}
+//Aufgabe1_13
+int factorial (int a)
+{
+  if(a<=1)
+  return 1;
+  return a * factorial(a-1);
+}
+TEST_CASE ("describe_sum_factorial", "[factorial]") 
+{
+REQUIRE (factorial (10) == 3628800);
+REQUIRE (factorial (3) == 6);
+REQUIRE (factorial (0) == 1);
+
+
 }
 int main(int argc, char* argv[]){
   return Catch::Session().run(argc, argv);
