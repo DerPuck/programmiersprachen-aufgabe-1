@@ -87,8 +87,16 @@ TEST_CASE ("describe_sum_factorial", "[factorial]")
 REQUIRE (factorial (10) == 3628800);
 REQUIRE (factorial (3) == 6);
 REQUIRE (factorial (0) == 1);
-
-
+}
+//Aufgabe1_14
+int is_prime (int a)
+{
+  
+}
+TEST_CASE ("describe_sum_is_prime", "[is_prime]") 
+{
+REQUIRE (is_prime (10) == 3628800);
+REQUIRE (is_prime (3) == 6);
 }
 int main(int argc, char* argv[]){
   return Catch::Session().run(argc, argv);
