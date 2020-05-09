@@ -91,6 +91,8 @@ REQUIRE (factorial (0) == 1);
 //Aufgabe1_14
 int is_prime (int a)
 {
+  if(a <=1)
+  return 0;
   for(int i = 2;i < a;i++)
   {
     if(a % i ==0)
@@ -101,11 +103,10 @@ int is_prime (int a)
     if(a % i !=0)
       return 1;
   }
-
 }
 TEST_CASE ("describe_sum_is_prime", "[is_prime]") 
 {
-REQUIRE (is_prime (9) == 3);
+REQUIRE (is_prime (1) == 0);
 REQUIRE (is_prime (7) == 1);
 REQUIRE (is_prime (11) == 1);
 REQUIRE (is_prime (21) == 3);
