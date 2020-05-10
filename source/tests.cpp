@@ -45,15 +45,19 @@ TEST_CASE ("describe_sum_mutiples", "[sum_multiples]")
 REQUIRE (sum_multiples (10) == 33);
 REQUIRE (sum_multiples (1000) == 234168);
 }
-/*//Aufgabe1_11
+//Aufgabe1_11
 float fract (float a)
 {
+  int b = a;
+  a = a - b;
   return a;
 }
 TEST_CASE ("describe_fract", "[fract]") 
 {
-REQUIRE (fract (1.123456789123456789123456789) == Approx(1.123456789123456789123456789));
-}*/
+REQUIRE (fract (1.123456789123456789123456789) == Approx(0.123456789123456789123456789));
+REQUIRE (fract (34.543) == Approx(0.543));
+
+}
 //Aufgabe1_12
 double surface (double r, double h)
 {
@@ -89,27 +93,25 @@ REQUIRE (factorial (3) == 6);
 REQUIRE (factorial (0) == 1);
 }
 //Aufgabe1_14
-int is_prime (int a)
+bool is_prime (int a)
 {
   if(a <=1)
-  return 0;
-  for(int i = 2;i < a;i++)
+  return false;
+  for(int i = 2;i <= a;i++)
   {
     if(a % i ==0)
-      return i;
+      return false;
+      break;
   }
-  for(int i = 2;i < a;i++)
-  {
-    if(a % i !=0)
-      return 1;
-  }
+    return true;
+  
 }
 TEST_CASE ("describe_sum_is_prime", "[is_prime]") 
 {
-REQUIRE (is_prime (1) == 0);
-REQUIRE (is_prime (7) == 1);
-REQUIRE (is_prime (11) == 1);
-REQUIRE (is_prime (21) == 3);
+REQUIRE (is_prime (1) == false);
+REQUIRE (is_prime (7) == true);
+REQUIRE (is_prime (11) == true);
+REQUIRE (is_prime (0) == false);
 }
 int main(int argc, char* argv[]){
   return Catch::Session().run(argc, argv);
