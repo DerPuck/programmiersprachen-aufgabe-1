@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lukas/Programmiersprache/programmiersprachen-aufgabe-1/source/mile_to_kilometer.cpp
+iostream
+-
+string
+-
+

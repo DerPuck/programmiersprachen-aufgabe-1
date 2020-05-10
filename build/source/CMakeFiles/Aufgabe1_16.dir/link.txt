@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -O3 -DNDEBUG  -rdynamic CMakeFiles/Aufgabe1_16.dir/Aufgabe1_16.cpp.o  -o Aufgabe1_16 
