@@ -106,7 +106,7 @@ bool is_prime (int a)
       break;
   }
     return true;
-  
+
 }
 TEST_CASE ("describe_sum_is_prime", "[is_prime]") 
 {
