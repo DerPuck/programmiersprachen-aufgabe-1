@@ -46,6 +46,8 @@ TEST_CASE ("describe_sum_mutiples", "[sum_multiples]")
 {
 REQUIRE (sum_multiples (10) == 33);
 REQUIRE (sum_multiples (1000) == 234168);
+REQUIRE (sum_multiples (0) == 0);
+
 }
 //Aufgabe1_11
 float fract (float a)
@@ -58,6 +60,7 @@ TEST_CASE ("describe_fract", "[fract]")
 {
 REQUIRE (fract (1.123456789123456789123456789) == Approx(0.123456789123456789123456789));
 REQUIRE (fract (34.543) == Approx(0.543));
+REQUIRE (fract (0) == Approx(0));
 
 }
 //Aufgabe1_12
